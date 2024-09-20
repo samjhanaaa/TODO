@@ -9,8 +9,12 @@ function addTask() {
     const taskContainer = document.createElement("div");
     taskContainer.className = "task-container";
 
+    // Create checkbox for the task
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
     //create space to add list item
-    const makeList = document.createElement("li");
+    const makeList = document.createElement("span");
     makeList.textContent = input.value;
 
     //button to edit task
@@ -34,7 +38,8 @@ function addTask() {
         taskContainer.remove();
     }
 
-    //add list , edit and delete to task container 
+    //add list , edit and delete to task container
+    taskContainer.appendChild(checkbox);
     taskContainer.appendChild(makeList);
     taskContainer.appendChild(editTask);
     taskContainer.appendChild(deleteTask);
@@ -45,6 +50,7 @@ function addTask() {
 
     //clear input space
     input.value = "";
+
 }
 
 
